@@ -1,0 +1,3 @@
+.vscode/
+demo/target/
+!demo/target/generated-sources/protobuf/

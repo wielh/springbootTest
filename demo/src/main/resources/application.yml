@@ -1,0 +1,40 @@
+
+debug: false
+spring:
+  application:
+    name: springboot
+  datasource:
+    url: jdbc:postgresql://localhost:5432/springtest?currentSchema=public
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      pool-name: MyHikariCP
+      minimum-idle: 5
+      maximum-pool-size: 10
+      idle-timeout: 30000
+      connection-timeout: 30000  
+  jpa:
+    show-sql: true
+    open-in-view: false
+    hibernate:
+      ddl-auto: update 
+
+server:
+  port: 8081
+  error:
+    whitelabel:
+      enabled: true
+  servlet:
+    session:
+      timeout: 24h
+
+grpc:
+  client:
+    greeterService:      
+      address: static://localhost:9090
+      enableKeepAlive: true
+      keepAliveWithoutCalls: true
+  
+
+
